@@ -3,60 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SJ Company</title>
+    <title>SJ Company | Official Studio</title>
     <style>
+        :root {
+            --primary-color: #1A237E; /* 스마트냉장고 메인 네이비 */
+            --bg-color: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --text-main: #2C3E50;
+            --text-sub: #7F8C8D;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #F8F9FA;
-            color: #333333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px;
             text-align: center;
         }
-        h1 {
-            color: #1A237E; /* 스마트냉장고 테마와 유사한 Navy 색상 */
-            margin-bottom: 8px;
-            font-size: 2.5rem;
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; letter-spacing: 1px; }
+        .header p { font-size: 1.1rem; opacity: 0.9; }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        p {
-            color: #666666;
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 24px;
-            font-size: 1.1rem;
+            border-bottom: 2px solid #E0E0E0;
+            padding-bottom: 10px;
         }
+        
+        /* 앱 카드 그리드 레이아웃 */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .app-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border: 1px solid #EBEBEB;
+        }
+        .app-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        .app-card h3 { font-size: 1.25rem; color: var(--primary-color); margin-bottom: 8px; }
+        .app-card p { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 20px; min-height: 45px; }
+        
+        /* 버튼 스타일 */
         .btn {
             display: inline-block;
             text-decoration: none;
-            color: #1A237E;
-            font-weight: bold;
-            border: 2px solid #1A237E;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: all 0.2s ease-in-out;
-        }
-        .btn:hover {
-            background-color: #1A237E;
-            color: #FFFFFF;
-        }
-        .contact {
-            margin-top: 40px;
+            color: var(--primary-color);
+            font-weight: 600;
             font-size: 0.9rem;
-            color: #999999;
+            border: 1px solid var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .btn:hover { background-color: var(--primary-color); color: white; }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>SJ Company</h1>
-    <p>스마트냉장고(SmartFridge) 애플리케이션 개발사</p>
-    
-    <!-- 기존 sjcompany-web 프로젝트의 개인정보 처리방침으로 라우팅 -->
-    <a href="/sjcompany-web/privacy.html" class="btn">개인정보 처리방침</a>
 
-    <div class="contact">
-        Contact: lsh1028m@gmail.com
+    <header class="header">
+        <h1>SJ Company</h1>
+        <p>일상을 혁신하고 즐거움을 만드는 소프트웨어 스튜디오</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Our Projects</h2>
+        
+        <div class="app-grid">
+            <!-- 1. 스마트냉장고 -->
+            <div class="app-card">
+                <h3>스마트냉장고 (SmartFridge)</h3>
+                <p>AI 음성 인식 기반 식재료 유통기한 관리 및 재고 추적 애플리케이션.</p>
+                <a href="/sjcompany-web/privacy.html" class="btn">개인정보 처리방침</a>
+            </div>
+
+            <!-- 2. 포그 치킨 -->
+            <div class="app-card">
+                <h3>AI 속 유저 찾기 (Fog Chicken)</h3>
+                <p>초·중학생 타겟의 심리 서바이벌. AI 닭 무리 속에 숨은 진짜 유저를 찾아내는 실시간 멀티플레이 게임.</p>
+                <a href="/sjcompany-web/fogchicken-privacy.html" class="btn">개인정보 처리방침</a>
+            </div>
+
+            <!-- 3. 코어 스터디 -->
+            <div class="app-card">
+                <h3>코어 스터디 (Core Study)</h3>
+                <p>학습 몰입도를 극대화하고 목표 달성을 지원하는 체계적인 학습 관리 서비스.</p>
+                <a href="/sjcompany-web/corestudy-privacy.html" class="btn">개인정보 처리방침</a>
+            </div>
+        </div>
     </div>
+
+    <footer class="footer">
+        <p>Business Contact: lsh1028m@gmail.com</p>
+        <p>&copy; 2026 SJ Company. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
